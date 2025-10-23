@@ -45,8 +45,11 @@ ChatBox_AI/
 ## ⚡ Quick Start
 
 ### 1. Clone repository
-`git clone https://github.com/your-username/ai-chat-assistant.git`
-`cd ChatBox_AI`
+```bash
+git clone https://github.com/your-username/ai-chat-assistant.git
+cd ChatBox_AI
+```
+
 ### 2. Install dependencies
 `pip install -r requirements.txt`
 ### 3.Setup environment variables
