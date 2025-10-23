@@ -54,12 +54,15 @@ cd ChatBox_AI
 `pip install -r requirements.txt`
 ### 3.Setup environment variables
 Create .env file and add your Groq API key
-  `GROQ_API_KEY=your_groq_api_key_here
-  GROQ_MODEL=llama-3.1-8b-instant
-  GROQ_VISION_MODEL=meta-llama/llama-4-scout-17b-16e-instruct
-  MAX_RESPONSE_TOKENS=500
-  MAX_FILE_SIZE=10485760
-  UPLOAD_FOLDER=uploads`
+```bash
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=llama-3.1-8b-instant
+GROQ_VISION_MODEL=meta-llama/llama-4-scout-17b-16e-instruct
+MAX_RESPONSE_TOKENS=500
+MAX_FILE_SIZE=10485760
+UPLOAD_FOLDER=uploads`
+```
+
 ### 4. Run the application
 `python app.py`
 ### 5. Open your browser
