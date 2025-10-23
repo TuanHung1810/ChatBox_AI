@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Thêm preconnect để tối ưu load Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Thêm fallback fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Chat Area -->
+        <div class="main-content">
+            <div class="chat-header">
+                <div class="header-title">
+                    <i class="fas fa-robot"></i>
+                    <h1>AI Chat Assistant</h1>
+                </div>
+                <div class="header-actions">
+                    <button class="header-btn" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="header-btn" id="clearChat">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <div class="welcome-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>How can I help you today?</h2>
+                    <p>I'm your AI assistant capable of text chat, image analysis, and CSV data processing.</p>
+                    
+                    <div class="quick-suggestions">
+                        <div class="suggestion-card" data-suggestion="chat">
+                            <i class="fas fa-comments"></i>
+                            <h3>Chat & Conversation</h3>
+                            <p>Have normal conversations and get information</p>
+                        </div>
+                        <div class="suggestion-card" data-suggestion="image">
+                            <i class="fas fa-images"></i>
+                            <h3>Image Analysis</h3>
+                            <p>Upload and discuss images with AI vision</p>
+                        </div>
+                        <div class="suggestion-card" data-suggestion="csv">
+                            <i class="fas fa-table"></i>
+                            <h3>CSV Analysis</h3>
+                            <p>Analyze data from CSV file or URL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <!-- File Upload Section -->
+                <div class="upload-section">
+                    <div class="upload-buttons">
+                        <label for="imageUpload" class="upload-btn image-btn">
+                            <i class="fas fa-image"></i>
+                            Upload Image
+                            <input type="file" id="imageUpload" accept="image/*" hidden>
+                        </label>
+                        
+                        <label for="csvUpload" class="upload-btn csv-btn">
+                            <i class="fas fa-file-csv"></i>
+                            Upload CSV
+                            <input type="file" id="csvUpload" accept=".csv" hidden>
+                        </label>
+
+                        <!-- BUTTON CHO CSV URL -->
+                        <button class="upload-btn url-btn" id="loadCsvUrlBtn">
+                            <i class="fas fa-link"></i>
+                            Load CSV from URL
+                        </button>
+                    </div>
+                    
+                    <div class="active-file" id="activeFile" style="display: none;">
+                        <span id="activeFileName"></span>
+                        <button id="removeFile">×</button>
+                    </div>
+                </div>
+
+                <!-- Main Input -->
+                <div class="input-group">
+                    <div class="input-container">
+                        <input 
+                            type="text" 
+                            id="messageInput" 
+                            placeholder="Message AI Chat Assistant..." 
+                            autocomplete="off"
+                        >
+                        <button id="sendButton">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="disclaimer">
+                    <p>AI can make mistakes. Consider checking important information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal cho CSV URL Input -->
+    <div class="modal" id="csvUrlModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Load CSV from URL</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Enter a CSV file URL (e.g., GitHub raw URL):</p>
+                <input 
+                    type="text" 
+                    id="csvUrlInput" 
+                    placeholder="https://raw.githubusercontent.com/username/repo/main/data.csv"
+                    autocomplete="off"
+                >
+                <div class="modal-actions">
+                    <button class="btn-secondary" id="cancelModal">Cancel</button>
+                    <button class="btn-primary" id="confirmLoadUrl">Load CSV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
