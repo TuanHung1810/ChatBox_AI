@@ -40,6 +40,7 @@ ChatBox_AI/
 ├── templates/
 │   └── index.html
 └── uploads/
+```
 
 ## ⚡ Quick Start
 
