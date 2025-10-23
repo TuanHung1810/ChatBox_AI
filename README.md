@@ -23,23 +23,23 @@ An AI chatbot application with text conversation, image analysis, and CSV data p
 
 ```bash
 ChatBox_AI/
-├── app.py              
-├── requirements.txt       
+├── app.py                 # Main Flask application
+├── requirements.txt       # Python dependencies
 ├── config/
-│   └── settings.py      
+│   └── settings.py       # Configuration settings
 ├── services/
-│   ├── chat_service.py  
-│   ├── groq_service.py   
-│   ├── vision_service.py 
-│   └── csv_analyzer.py  
+│   ├── chat_service.py   # Chat functionality
+│   ├── groq_service.py   # Groq API integration
+│   ├── vision_service.py # Image analysis
+│   └── csv_analyzer.py   # CSV data processing
 ├── static/
 │   ├── css/
-│   │   └── style.css
+│   │   └── style.css     # Styling
 │   └── js/
-│       └── script.js
+│       └── script.js     # Frontend logic
 ├── templates/
-│   └── index.html
-└── uploads/
+│   └── index.html        # Main template
+└── uploads/              # File upload directory
 ```
 
 ## ⚡ Quick Start
