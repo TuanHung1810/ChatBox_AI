@@ -21,6 +21,7 @@ An AI chatbot application with text conversation, image analysis, and CSV data p
 
 ## 📁 Project Structure
 
+```bash
 ChatBox_AI/
 ├── app.py              
 ├── requirements.txt       
