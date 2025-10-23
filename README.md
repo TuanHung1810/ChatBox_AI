@@ -1,6 +1,6 @@
 # AI Chat Assistant
 
-A AI chatbot application with text conversation, image analysis, and CSV data processing capabilities.
+An AI chatbot application with text conversation, image analysis, and CSV data processing capabilities.
 
 ## ✨ Features
 
